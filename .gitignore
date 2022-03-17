@@ -1,0 +1,7 @@
+
+src/.vs
+src/packages
+bin
+obj
+*.pdb
+*.user
