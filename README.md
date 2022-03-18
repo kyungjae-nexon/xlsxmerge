@@ -41,6 +41,6 @@ XlsxMerge는 svn, git, perforce, plasticscm 등 여러 SCM 에 연동하여 사�
 # 크레딧
 Product of Nexon Korea
 
-- 주 개발 : @kyungjae-nexon
-- 기획 및 프로토타입 제작 : (TODO)
-- 로고 제작 : @IntBread
+- 주 개발 : Kyungjae Park ( @kyungjae-nexon / @kyungjaepark )
+- 기획 및 프로토타입 제작 : Eunseok Yi ( @paparang ), Chanwoong Kim ( @kexplo )
+- 로고 제작 : Jungsoo Lee ( @IntBread )
