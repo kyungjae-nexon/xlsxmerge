@@ -1,5 +1,10 @@
 XlsxMerge는 커맨드 라인 옵션을 통해 여러 SCM 와의 연동을 지원합니다. svn, git, perforce, plasticscm 등에 대한 연동 문서가 있으며, 직접 연동을 하는 방법도 안내합니다.
 
+- [TortoiseSVN / TortoiseGit](#tortoisesvn--tortoisegit)
+- [Perforce](#perforce)
+- [PlasitcSCM](#plasticscm-pscm)
+- [그 외의 도구 : 직접 연동하기](#그-외의-도구--직접-연동하기)
+
 # TortoiseSVN / TortoiseGit
 
 Note : Git 의 경우 사용하는 클라이언트에 따라 파일 확장자별 diff / merge 도구를 지정 가능한 지 여부가 달라집니다.
