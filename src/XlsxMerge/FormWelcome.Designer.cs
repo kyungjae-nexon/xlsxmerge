@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using XlsxMerge.Properties;
 
-namespace XlsxMerge
+namespace NexonKorea.XlsxMerge
 {
     partial class FormWelcome
     {

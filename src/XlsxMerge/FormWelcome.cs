@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NexonKorea.XlsxMerge;
 
-namespace XlsxMerge
+namespace NexonKorea.XlsxMerge
 {
     public partial class FormWelcome : Form
     {

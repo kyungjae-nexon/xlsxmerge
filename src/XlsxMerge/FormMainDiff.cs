@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using NexonKorea.XlsxMerge;
 
-namespace XlsxMerge
+namespace NexonKorea.XlsxMerge
 {
 	public partial class FormMainDiff : Form
 	{

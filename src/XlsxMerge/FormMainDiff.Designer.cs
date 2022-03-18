@@ -1,4 +1,4 @@
-﻿namespace XlsxMerge
+﻿namespace NexonKorea.XlsxMerge
 {
     partial class FormMainDiff
     {

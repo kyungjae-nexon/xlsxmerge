@@ -1,26 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using NexonKorea.XlsxMerge;
-
-namespace XlsxMerge
+﻿namespace NexonKorea.XlsxMerge
 {
-    static class Program
+    internal static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static int Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            
+            ApplicationConfiguration.Initialize();
+
             var args = Environment.GetCommandLineArgs();
 
-            MergeArgumentInfo argumentInfo = null;
+            MergeArgumentInfo? argumentInfo = null;
             if (args.Length > 1)
             {
                 argumentInfo = new MergeArgumentInfo(args);
@@ -32,8 +21,10 @@ namespace XlsxMerge
             }
 
             // 폴더 변경은 args 해석 이후에 합니다.
-            string exeFolderPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
-            System.IO.Directory.SetCurrentDirectory(exeFolderPath);
+            string? exeFolderPath = Path.GetDirectoryName(path: System.Reflection.Assembly.GetEntryAssembly()?.Location);
+            if (String.IsNullOrEmpty(exeFolderPath) == false)
+                Directory.SetCurrentDirectory(exeFolderPath);
+
             if (argumentInfo != null)
             {
                 var formMainDiff = new FormMainDiff();
