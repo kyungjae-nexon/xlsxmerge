@@ -23,22 +23,22 @@ TortoiseSVN 는 Edit Conflict 시 비교 대상 파일과 머지 결과 파일�
 
 탐색기에서 아무 곳에나 우클릭 후 TortoiseSVN > Settings 메뉴를 선택해 설정 메뉴를 엽니다.
 
-`TODO: Screenshot Here`
+![TortoiseSVN - Settings](images/tortoisesvn-1.png)
 
 Diff Viewer 항목에서 Advanced.. 를 누릅니다.
 
-`TODO: Screenshot Here`
+![Diff Viewer - Advanced](images/tortoisesvn-2.png)
 
 `.xlsx` 확장자를 찾아, Edit로 편집합니다
 
-`TODO: Screenshot Here`
+![Edit](images/tortoisesvn-3.png)
 
 External Program 항목에 다음과 같이 입력합니다.
 
 - `<XlsxMerge.exe 경로> -order=bd %base %mine`
 - 예 : `D:\XlsxMerge\XlsxMerge.exe -order=bd %base %mine`
 
-`TODO: Screenshot Here`
+![Path](images/tortoisesvn-4.png)
 
 이후 .xls, .xlsm 등에 동일한 진행을 해 줍니다.
 
@@ -62,11 +62,11 @@ External Program 항목에 다음과 같이 입력합니다.
 
 Perforce Client (P4V) 에서는 `Edit` > `Preferences` 메뉴를 통해, 엑셀 파일의 diff / merge 도구를 지정할 수 있습니다.
 
-`TODO: Screenshot Here`
+![Menu](images/perforce-1.png)
 
 ## Diff 도구 추가
 
-`TODO: Screenshot Here`
+![Add](images/perforce-2.png)
 
 위 그림과 같이 Diff 를 누르고, 확장자 별 diff 도구에서 추가 (Add) 를 누릅니다.
 
@@ -76,18 +76,18 @@ Perforce Client (P4V) 에서는 `Edit` > `Preferences` 메뉴를 통해, 엑셀 
 - Application : XlsxMerge 경로
 - Arguments : `-order=bd %1 %2`
 
-`TODO: Screenshot Here`
+![Xlsx](images/perforce-3.png)
 
 위 추가 작업을 `.xls`, `.xlsm` 파일에 동일하게 진행해 주세요.
 이후 나온 결과를 확인하고, OK 를 눌러 설정을 마칩니다.
 
-`TODO: Screenshot Here`
+![Confirm](images/perforce-4.png)
 
 ## Merge
 
 Merge 방법은 앞서와 비슷합니다.
 
-`TODO: Screenshot Here`
+![Add](images/perforce-5.png)
 
 위 그림과 같이 Merge 를 누르고, 확장자 별 merge 도구에서 추가 (Add) 를 누릅니다.
 
@@ -95,69 +95,50 @@ Merge 방법은 앞서와 비슷합니다.
 - Application : XlsxMerge 경로
 - Arguments : `-order=bsdr %b %1 %2 %r`
 
-`TODO: Screenshot Here`
+![Xlsx](images/perforce-6.png)
 
 위 추가 작업을 `.xls`, `.xlsm` 파일에 동일하게 진행해 주세요.
 이후 나온 결과를 확인하고, OK 를 눌러 설정을 마칩니다.
 
-`TODO: Screenshot Here`
-
-## 참고 : Perforce 공식 사이트 가이드
-- https://www.perforce.com/perforce/doc.current/manuals/p4v/#P4V/configuring.preferences.diff.html
-- https://www.perforce.com/perforce/doc.current/manuals/p4v/#P4V/configuring.preferences.merge.html
+![Confirm](images/perforce-7.png)
 
 # PlasticSCM (PSCM)
 
 ## Diff Tools 추가
 
-PlasticSCM 을 실행하고, 왼쪽의 Preferences를 누릅니다.
+- PlasticSCM 을 실행하고, 왼쪽의 Preferences를 누릅니다.
 
-`TODO: Screenshot Here`
+- Diff Tools 탭을 선택 후 Add를 누릅니다.
 
-Diff Tools 탭을 선택 후 Add를 누릅니다.
+- 다음과 같이 값을 입력하고 OK 를 눌러 추가합니다.
 
-`TODO: Screenshot Here`
+  - `External Diff tool` 선택 
+  - 경로는 다음과 같이 입력
+    - `"[설치경로]\XlsxMerge.exe" -b="@sourcefile" -d="@destinationfile"`
+    - 예 : `"D:\XlsxMerge\XlsxMerge.exe" -b="@sourcefile" -d="@destinationfile"`
+  - `Use with files that match the following pattern` 체크 
+  - 패턴을 다음과 같이 입력 `*.xls*`
 
-다음 스크린샷을 참고해 값을 입력하고 OK 를 눌러 추가합니다.
-
-- `External Diff tool` 선택 
-- 경로는 다음과 같이 입력
-  - `"[설치경로]\XlsxMerge.exe" -b="@sourcefile" -d="@destinationfile"`
-  - 예 : `"D:\XlsxMerge\XlsxMerge.exe" -b="@sourcefile" -d="@destinationfile"`
-- `Use with files that match the following pattern` 체크 
-- 패턴을 다음과 같이 입력 `*.xls*`
-
-`TODO: Screenshot Here`
-
-추가된 항목의 우선순위를 맨 위로 올립니다.
+- 추가된 항목의 우선순위를 맨 위로 올립니다.
 (선택 후 UP 버튼을 눌러 우선순위 조정)
-
-`TODO: Screenshot Here`
 
 ## Merge Tools 추가
 
-PlasticSCM 을 실행하고, 왼쪽의 Preferences를 누릅니다.
+- PlasticSCM 을 실행하고, 왼쪽의 Preferences를 누릅니다.
 
-Merge Tools 탭을 선택 후 Add를 누릅니다.
+- Merge Tools 탭을 선택 후 Add를 누릅니다.
 
-`TODO: Screenshot Here`
+- 다음과 같이 값을 입력하고 OK 를 눌러 추가합니다.
 
-다음 스크린샷을 참고해 값을 입력하고 OK 를 눌러 추가합니다.
+  - `External Diff tool` 선택 
+  - 경로는 다음과 같이 입력
+    - `"[설치경로]\XlsxMerge.exe" -b="@basefile" -d="@destinationfile" -s="@sourcefile" -r="@output"`
+    - 예 : `"D:\XlsxMerge\XlsxMerge.exe" -b="@basefile" -d="@destinationfile" -s="@sourcefile" -r="@output"`
+  - `Use with files that match the following pattern` 체크 
+  - 패턴을 다음과 같이 입력 `*.xls*`
 
-- `External Diff tool` 선택 
-- 경로는 다음과 같이 입력
-  - `"[설치경로]\XlsxMerge.exe" -b="@basefile" -d="@destinationfile" -s="@sourcefile" -r="@output"`
-  - 예 : `"D:\XlsxMerge\XlsxMerge.exe" -b="@basefile" -d="@destinationfile" -s="@sourcefile" -r="@output"`
-- `Use with files that match the following pattern` 체크 
-- 패턴을 다음과 같이 입력 `*.xls*`
-
-`TODO: Screenshot Here`
-
-추가된 항목의 우선순위를 맨 위로 올립니다.
+- 추가된 항목의 우선순위를 맨 위로 올립니다.
 (선택 후 UP 버튼을 눌러 우선순위 조정)
-
-`TODO: Screenshot Here`
-
 
 # 그 외의 도구 : 직접 연동하기
 
