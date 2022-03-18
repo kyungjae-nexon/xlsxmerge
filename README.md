@@ -13,7 +13,8 @@ XlsxMerge는 엑셀 문서를 비교하고, 내용을 병합할 수 있는 도�
  - .NET Framework 4.6 이상이 설치되어 있어야 합니다.
  - diff 도구 : 내부 동작으로 Unix Diff 도구를 사용합니다.
  - XlsxMerge 실행 폴더에 diff.exe 와 diff3.exe 도구가 있어야 합니다.
-   - https://sourceforge.net/projects/unxutils/files/unxutils/current/
+   - Git 설치 후, 설치 디렉토리의 `usr\bin` 디렉토리에 diff.exe 와 diff3.exe 파일을 찾을 수 있습니다.
+   - https://git-scm.com/download/win
 
 ## 미리 알아둘 것
 
