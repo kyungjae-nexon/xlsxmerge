@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using NexonKorea.XlsxMerge;
 
-namespace XlsxMerge
+namespace NexonKorea.XlsxMerge
 {
 	public partial class FormMainDiff : Form
 	{
@@ -209,7 +209,14 @@ namespace XlsxMerge
 			if (String.IsNullOrEmpty(MergeArgs.ResultPath))
 			{
 				if (MessageBox.Show("결과를 저장했습니다. 파일을 지금 열어보시겠습니까?", "완료", MessageBoxButtons.YesNo) == DialogResult.Yes)
-					Process.Start(mergedFilePath);
+                {
+					ProcessStartInfo psi = new ProcessStartInfo()
+					{
+						FileName = mergedFilePath,
+						UseShellExecute = true
+					};
+					Process.Start(psi);
+				}
 			}
 			else
 			{

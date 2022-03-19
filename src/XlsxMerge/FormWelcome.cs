@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NexonKorea.XlsxMerge;
 
-namespace XlsxMerge
+namespace NexonKorea.XlsxMerge
 {
     public partial class FormWelcome : Form
     {
@@ -38,7 +38,7 @@ namespace XlsxMerge
         {
             var args = new List<string>();
 
-            args.Add(Path.GetFileName(Assembly.GetEntryAssembly().Location));
+            args.Add(Assembly.GetEntryAssembly().GetName().Name + ".exe");
             args.Add($"-b={AddDoubleQuote(textBoxPathBase.Text)}");
             args.Add($"-d={AddDoubleQuote(textBoxPathMine.Text)}");
             if (checkBoxUse3WayMerge.Checked)
