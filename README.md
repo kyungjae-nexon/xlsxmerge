@@ -1,4 +1,4 @@
-# XlsxMerge
+# XlsxMerge - 3-way diff / merge tool for Excel Files
 
 XlsxMerge는 엑셀 문서를 비교하고, 내용을 병합할 수 있는 도구입니다.
 
