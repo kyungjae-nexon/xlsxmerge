@@ -116,8 +116,7 @@ namespace NexonKorea.XlsxMerge
     {
         public static Tuple<int, int, int> GetVersionMajorMinorBuild()
         {
-            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
-            var fvi = System.Diagnostics.FileVersionInfo.GetVersionInfo(assembly.Location);
+            var fvi = System.Diagnostics.FileVersionInfo.GetVersionInfo(Environment.ProcessPath);
             return new Tuple<int, int, int>(fvi.ProductMajorPart, fvi.ProductMinorPart, fvi.ProductBuildPart);
         }
 

@@ -17,6 +17,10 @@ XlsxMerge는 엑셀 문서를 비교하고, 내용을 병합할 수 있는 도�
    - XlsxMerge 실행 폴더에 diff.exe 와 diff3.exe 도구가 있어야 합니다.
    - https://sourceforge.net/projects/unxutils/files/unxutils/current/
 
+## 빌드 환경
+ - Visual Studio 2022 를 이용하여 빌드해야 합니다. 
+   - https://docs.microsoft.com/ko-kr/visualstudio/msbuild/resolvecomreference-task?view=vs-2022#msb4803-error
+
 ## 미리 알아둘 것
 
 ### 사용에 적합한 엑셀 문서
