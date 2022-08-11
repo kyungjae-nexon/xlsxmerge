@@ -64,6 +64,7 @@
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.buttonCopyTableContents = new System.Windows.Forms.Button();
 			this.checkBoxHideRemovedLines = new System.Windows.Forms.CheckBox();
+			this.checkBoxHideEqualLines = new System.Windows.Forms.CheckBox();
 			this.label7 = new System.Windows.Forms.Label();
 			this.checkBoxShowFirstRowContentsOnTop = new System.Windows.Forms.CheckBox();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
@@ -461,6 +462,7 @@
 			// 
 			this.panel3.Controls.Add(this.buttonCopyTableContents);
 			this.panel3.Controls.Add(this.checkBoxHideRemovedLines);
+			this.panel3.Controls.Add(this.checkBoxHideEqualLines);
 			this.panel3.Controls.Add(this.label7);
 			this.panel3.Controls.Add(this.checkBoxShowFirstRowContentsOnTop);
 			this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -472,10 +474,10 @@
 			// buttonCopyTableContents
 			// 
 			this.buttonCopyTableContents.BackColor = System.Drawing.Color.Snow;
-			this.buttonCopyTableContents.Location = new System.Drawing.Point(506, 1);
+			this.buttonCopyTableContents.Location = new System.Drawing.Point(826, 1);
 			this.buttonCopyTableContents.Name = "buttonCopyTableContents";
 			this.buttonCopyTableContents.Size = new System.Drawing.Size(211, 23);
-			this.buttonCopyTableContents.TabIndex = 10;
+			this.buttonCopyTableContents.TabIndex = 11;
 			this.buttonCopyTableContents.Text = "위에 표시된 테이블 클립보드로 복사";
 			this.buttonCopyTableContents.UseVisualStyleBackColor = false;
 			this.buttonCopyTableContents.Click += new System.EventHandler(this.buttonCopyTableContents_Click);
@@ -490,6 +492,17 @@
 			this.checkBoxHideRemovedLines.Text = "삭제된 행 표시하지 않기";
 			this.checkBoxHideRemovedLines.UseVisualStyleBackColor = true;
 			this.checkBoxHideRemovedLines.CheckedChanged += new System.EventHandler(this.checkBoxHideRemovedLines_CheckedChanged);
+			// 
+			// checkBoxHideRemovedLines
+			// 
+			this.checkBoxHideEqualLines.AutoSize = true;
+			this.checkBoxHideEqualLines.Location = new System.Drawing.Point(491, 5);
+			this.checkBoxHideEqualLines.Name = "checkBoxHideEqualLines";
+			this.checkBoxHideEqualLines.Size = new System.Drawing.Size(158, 19);
+			this.checkBoxHideEqualLines.TabIndex = 10;
+			this.checkBoxHideEqualLines.Text = "동일한 행 표시하지 않기";
+			this.checkBoxHideEqualLines.UseVisualStyleBackColor = true;
+			this.checkBoxHideEqualLines.CheckedChanged += new System.EventHandler(this.checkBoxHideEqualLines_CheckedChanged);
 			// 
 			// label7
 			// 
@@ -592,6 +605,7 @@
 		private System.Windows.Forms.Label labelCurrentWorksheetMergeMode;
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.CheckBox checkBoxHideRemovedLines;
+		private System.Windows.Forms.CheckBox checkBoxHideEqualLines;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label labelCurrentMergeOrder;
 		private System.Windows.Forms.LinkLabel linkLabelChangeMergeOrder;
