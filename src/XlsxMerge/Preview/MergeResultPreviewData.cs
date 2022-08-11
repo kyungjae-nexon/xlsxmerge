@@ -23,7 +23,7 @@ namespace NexonKorea.XlsxMerge
 		}
 
 		public static MergeResultPreviewData GeneratePreviewData(XlsxMergeDecision.SheetMergeDecision sheetDecision,
-			int worksheetBaseRowCount, bool hideDeletedLines)
+			int worksheetBaseRowCount, bool hideDeletedLines, bool hideEqualLines)
 		{
 			if (sheetDecision == null)
 				return null;
@@ -54,8 +54,9 @@ namespace NexonKorea.XlsxMerge
 				var rowRangeMine = eachHunkInfo.rowRangeMap[DocOrigin.Mine];
 				var rowRangeTheirs = eachHunkInfo.rowRangeMap[DocOrigin.Theirs];
 
-				for (int i = lastRowBase + 1; i < rowRangeBase.RowNumber; i++)
-					previewData.RowInfoList.Add("=:" + i.ToString());
+				if (hideEqualLines == false)
+					for (int i = lastRowBase + 1; i < rowRangeBase.RowNumber; i++)
+						previewData.RowInfoList.Add("=:" + i.ToString());
 
 				previewData.HunkStartsPosList.Add(previewData.RowInfoList.Count);
 
@@ -133,9 +134,9 @@ namespace NexonKorea.XlsxMerge
 
 				lastRowBase = rowRangeBase.RowNumber + rowRangeBase.RowCount - 1;
 			}
-
-			for (int i = lastRowBase + 1; i <= worksheetBaseRowCount; i++)
-				previewData.RowInfoList.Add("=:" + i.ToString());
+			if (hideEqualLines == false)
+				for (int i = lastRowBase + 1; i <= worksheetBaseRowCount; i++)
+					previewData.RowInfoList.Add("=:" + i.ToString());
 
 			return previewData;
 		}

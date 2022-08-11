@@ -292,6 +292,12 @@ namespace NexonKorea.XlsxMerge
 			HighlightFocusedHunk();
 		}
 
+		private void checkBoxHideEqualLines_CheckedChanged(object sender, EventArgs e)
+		{
+			UpdatePreviewWindow();
+			HighlightFocusedHunk();
+		}
+
 		public static string GetDisplayTextForMergeOrder(List<DocOrigin> candidate)
 		{
 			if (candidate == null)
@@ -421,7 +427,7 @@ namespace NexonKorea.XlsxMerge
 
 
 			var worksheetBase = _xlsxMergeDecision.DiffResult.GetParsedWorksheetData(sheetResult.WorksheetName)[DocOrigin.Base];
-			var previewData = MergeResultPreviewData.GeneratePreviewData(getCurrentSheetDecision(), worksheetBase == null ? 0 : worksheetBase.GetRowCount(), checkBoxHideRemovedLines.Checked);
+			var previewData = MergeResultPreviewData.GeneratePreviewData(getCurrentSheetDecision(), worksheetBase == null ? 0 : worksheetBase.GetRowCount(), checkBoxHideRemovedLines.Checked, checkBoxHideEqualLines.Checked);
 			previewDataCache[sheetResult.WorksheetName] = previewData;
 			MergeResultPreviewer.RefreshDataGridViewContents(_xlsxMergeDecision, sheetDecision, dataGridView1, previewData);
 			UpdateDataGridViewColumnName();
