@@ -18,6 +18,15 @@ namespace NexonKorea.XlsxMerge
         public FormWelcome()
         {
             InitializeComponent();
+
+            textBoxPathBase.DragEnter += new DragEventHandler(textBoxPath_DragEnter);
+            textBoxPathBase.DragDrop += new DragEventHandler(textBoxPath_DragDrop);
+
+            textBoxPathMine.DragEnter += new DragEventHandler(textBoxPath_DragEnter);
+            textBoxPathMine.DragDrop += new DragEventHandler(textBoxPath_DragDrop);
+
+            textBoxPathTheirs.DragEnter += new DragEventHandler(textBoxPath_DragEnter);
+            textBoxPathTheirs.DragDrop += new DragEventHandler(textBoxPath_DragDrop);
         }
 
         private void textBoxPathBase_TextChanged(object sender, EventArgs e)
@@ -105,6 +114,20 @@ namespace NexonKorea.XlsxMerge
             formMainDiff.MergeArgs = argumentInfo;
             formMainDiff.ShowDialog();
             Close();
+        }
+
+        private void textBoxPath_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                e.Effect = DragDropEffects.All;
+            else
+                e.Effect = DragDropEffects.None;
+        }
+
+        private void textBoxPath_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] s = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+            (sender as TextBox).Text = s.First();
         }
 
         private static string AddDoubleQuote(string s)

@@ -104,6 +104,7 @@ namespace NexonKorea.XlsxMerge
             // 
             // textBoxPathBase
             // 
+            this.textBoxPathBase.AllowDrop = true;
             this.textBoxPathBase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPathBase.Location = new System.Drawing.Point(6, 37);
@@ -161,6 +162,7 @@ namespace NexonKorea.XlsxMerge
             // 
             // textBoxPathMine
             // 
+            this.textBoxPathMine.AllowDrop = true;
             this.textBoxPathMine.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPathMine.Location = new System.Drawing.Point(6, 37);
@@ -205,6 +207,7 @@ namespace NexonKorea.XlsxMerge
             // 
             // textBoxPathTheirs
             // 
+            this.textBoxPathTheirs.AllowDrop = true;
             this.textBoxPathTheirs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPathTheirs.Location = new System.Drawing.Point(6, 37);
