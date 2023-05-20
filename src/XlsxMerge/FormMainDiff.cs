@@ -523,8 +523,24 @@ namespace NexonKorea.XlsxMerge
 
 			var startPosList = previewDataCache[sheetDecision.WorksheetName].HunkStartsPosList;
 
-			var newHunkIdx = (_focusedHunkIdx + direction + startPosList.Count) % startPosList.Count;
-			_focusedHunkIdx = newHunkIdx;
+			if (checkBoxNavigateOnlyConflictHunks.Checked)
+			{
+				for (int offset = 1; offset < startPosList.Count; offset++)
+				{
+					int newHunkIdx = (_focusedHunkIdx + direction * offset + startPosList.Count) % startPosList.Count;
+					var mergeDecision = sheetDecision.HunkMergeDecisionList[newHunkIdx];
+					if (mergeDecision.DocMergeOrder == null)
+					{
+						_focusedHunkIdx = newHunkIdx;
+						break;
+					}
+				}
+			}
+			else
+			{
+				_focusedHunkIdx = (_focusedHunkIdx + direction + startPosList.Count) % startPosList.Count;
+			}
+
 			ChangeFocusedHunk(_focusedHunkIdx);
 			HighlightFocusedHunk();
 		}
