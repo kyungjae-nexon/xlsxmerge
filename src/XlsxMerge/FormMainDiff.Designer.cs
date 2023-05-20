@@ -70,6 +70,7 @@
 			saveFileDialog1 = new SaveFileDialog();
 			imageList1 = new ImageList(components);
 			contextMenuStrip1 = new ContextMenuStrip(components);
+			checkBoxNavigateOnlyConflictHunks = new CheckBox();
 			panelTop.SuspendLayout();
 			panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)splitContainerBottom).BeginInit();
@@ -298,6 +299,7 @@
 			// groupBox1
 			// 
 			groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+			groupBox1.Controls.Add(checkBoxNavigateOnlyConflictHunks);
 			groupBox1.Controls.Add(label12);
 			groupBox1.Controls.Add(labelTotalDiffHunks);
 			groupBox1.Controls.Add(labelCurrentDiffHunkIdx);
@@ -344,7 +346,7 @@
 			// buttonNavPrev
 			// 
 			buttonNavPrev.BackColor = Color.LightYellow;
-			buttonNavPrev.Location = new Point(182, 16);
+			buttonNavPrev.Location = new Point(259, 16);
 			buttonNavPrev.Name = "buttonNavPrev";
 			buttonNavPrev.Size = new Size(37, 23);
 			buttonNavPrev.TabIndex = 2;
@@ -355,7 +357,7 @@
 			// linkLabelChangeMergeOrder
 			// 
 			linkLabelChangeMergeOrder.AutoSize = true;
-			linkLabelChangeMergeOrder.Location = new Point(343, 19);
+			linkLabelChangeMergeOrder.Location = new Point(420, 19);
 			linkLabelChangeMergeOrder.Name = "linkLabelChangeMergeOrder";
 			linkLabelChangeMergeOrder.Size = new Size(40, 15);
 			linkLabelChangeMergeOrder.TabIndex = 9;
@@ -367,7 +369,7 @@
 			// 
 			labelCurrentMergeOrder.BorderStyle = BorderStyle.FixedSingle;
 			labelCurrentMergeOrder.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point);
-			labelCurrentMergeOrder.Location = new Point(389, 15);
+			labelCurrentMergeOrder.Location = new Point(466, 15);
 			labelCurrentMergeOrder.Name = "labelCurrentMergeOrder";
 			labelCurrentMergeOrder.Size = new Size(295, 25);
 			labelCurrentMergeOrder.TabIndex = 10;
@@ -376,7 +378,7 @@
 			// buttonNavNext
 			// 
 			buttonNavNext.BackColor = Color.LightYellow;
-			buttonNavNext.Location = new Point(225, 15);
+			buttonNavNext.Location = new Point(302, 15);
 			buttonNavNext.Name = "buttonNavNext";
 			buttonNavNext.Size = new Size(37, 23);
 			buttonNavNext.TabIndex = 2;
@@ -396,7 +398,7 @@
 			// label9
 			// 
 			label9.AutoSize = true;
-			label9.Location = new Point(267, 19);
+			label9.Location = new Point(344, 19);
 			label9.Name = "label9";
 			label9.Size = new Size(70, 15);
 			label9.TabIndex = 8;
@@ -537,6 +539,16 @@
 			contextMenuStrip1.Name = "contextMenuStrip1";
 			contextMenuStrip1.Size = new Size(61, 4);
 			// 
+			// checkBoxNavigateOnlyConflictHunks
+			// 
+			checkBoxNavigateOnlyConflictHunks.AutoSize = true;
+			checkBoxNavigateOnlyConflictHunks.Location = new Point(169, 19);
+			checkBoxNavigateOnlyConflictHunks.Name = "checkBoxNavigateOnlyConflictHunks";
+			checkBoxNavigateOnlyConflictHunks.Size = new Size(90, 19);
+			checkBoxNavigateOnlyConflictHunks.TabIndex = 14;
+			checkBoxNavigateOnlyConflictHunks.Text = "충돌 지점만";
+			checkBoxNavigateOnlyConflictHunks.UseVisualStyleBackColor = true;
+			// 
 			// FormMainDiff
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
@@ -616,5 +628,6 @@
 		private System.Windows.Forms.Panel panelMergeHunksOff;
 		private System.Windows.Forms.Button buttonCopyTableContents;
 		private System.Windows.Forms.TextBox textBox1;
+		private CheckBox checkBoxNavigateOnlyConflictHunks;
 	}
 }
